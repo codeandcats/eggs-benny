@@ -1,2 +1,2 @@
-# egghead-downloader
-A CLI app for downloading tutorial videos from egghead.io
+# eggs-benny
+A command-line interface that lets Pro [egghead.io](https://egghead.io) users mass download tutorial videos by entire course(s) or even technology groups (e.g. React, Angular, etc) at a time.

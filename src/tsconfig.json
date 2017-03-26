@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"target": "es3",
+		"strictNullChecks": true,
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"outDir": "../dist",
+		"lib":[
+			"es2015",
+			"dom"
+		]
+	},
+	"files": ["./index.ts"]
+}
