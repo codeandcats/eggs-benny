@@ -4,6 +4,7 @@ import * as chalk from 'chalk';
 import { handleErrorAndExit } from '../common';
 import { Config } from '../config';
 const pkg = require('../../package.json');
+import ora = require('ora');
 
 commander
 	.command('list')
@@ -26,12 +27,37 @@ commander
 		});
 	});
 
+function createSpinner(text: string) {
+	return ora({
+		text,
+		color: 'yellow',
+		interval: 25
+	}).start();
+}
+
 function listCourses(emailAddress: string, password: string) {
 	const egghead = new EggHead();
+
+	let spinner = createSpinner('Authenticating...');
+
 	return egghead
 		.authenticate({ emailAddress, password })
-		.then(() => egghead.getCourses(), err => handleErrorAndExit(err))
+		.then(() => {
+			(spinner.succeed as any)('Authenticated');
+			console.log();
+
+			spinner = createSpinner('Retrieving course listing...');
+
+			return egghead.getCourses();
+		}, err => {
+			spinner.fail();
+			console.log();
+
+			return handleErrorAndExit(err);
+		})
 		.then(technologies => {
+			spinner.stop();
+
 			const allCourses = technologies
 				.map(technology => technology.courses)
 				.reduce((result, courses) => result.concat(courses), []);
@@ -40,7 +66,6 @@ function listCourses(emailAddress: string, password: string) {
 				.map(course => course.lessonCount)
 				.reduce((total, count) => total + count, 0);
 
-			console.log();
 			console.log('Course Listing: ' + chalk.yellow(`${totalLessonCount} lessons over ${allCourses.length} courses over ${technologies.length} technologies`));
 			console.log();
 			
@@ -52,5 +77,10 @@ function listCourses(emailAddress: string, password: string) {
 				}
 				console.log();
 			}
+		}, err => {
+			spinner.fail();
+			console.log();
+
+			return handleErrorAndExit(err);
 		});
 }
