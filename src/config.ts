@@ -1,4 +1,4 @@
-import { readJsonFile, writeJsonFile } from './fileUtils';
+import { readJsonFile, writeJsonFile } from './utils/files';
 import * as path from 'path';
 const pkg = require('../package.json');
 

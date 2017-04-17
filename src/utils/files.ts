@@ -2,6 +2,10 @@ import * as path from 'path';
 import * as mkdirp from 'mkdirp';
 import * as fs from 'mz/fs';
 
+export async function deleteFile(fileName: string): Promise<void> {
+	return fs.unlink(fileName);
+}
+
 export async function ensureDirectoryExists(directoryPath: string): Promise<void> {
 	return new Promise<void>((resolve, reject) => {
 		mkdirp(directoryPath, err => err ? reject(err) : resolve());
@@ -10,6 +14,10 @@ export async function ensureDirectoryExists(directoryPath: string): Promise<void
 
 export async function fileExists(fileName: string): Promise<boolean> {
 	return fs.stat(fileName).then(stats => stats.isFile(), () => false);
+}
+
+export async function getFileSize(fileName: string): Promise<number> {
+	return fs.stat(fileName).then(stats => stats.size);
 }
 
 export async function readJsonFile<T extends object>(fileName: string, defaultValue: T): Promise<T> {
