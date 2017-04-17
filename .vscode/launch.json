@@ -8,7 +8,8 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Launch Program",
-			"program": "${workspaceRoot}/index.js",
+			"program": "${workspaceRoot}/index.js ",
+			"args": ["download", "-t", "Vue.js"],
 			"outFiles": []
 		},
 		{
@@ -18,21 +19,6 @@
 			"address": "localhost",
 			"port": 5858,
 			"outFiles": []
-		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "List",
-			"program": "${workspaceRoot}/index.js",
-			"args": [
-				"list",
-				"codeandcats@gmail.com",
-				"efv9unBjIbr2g344"
-			],
-			"outFiles": [
-				"./dist"
-			],
-			"sourceMaps": true
 		}
 	]
 }
