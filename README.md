@@ -1,11 +1,7 @@
 # eggs-benny
 
 <p align="center">
-	<a href="http://gulpjs.com">
-		<!--<img height="257" width="114" src="https://raw.githubusercontent.com/codeandcats/eggs-benny/master/images/logo.png">
-		-->
-		<img src="./images/logo-small.png" />
-	</a>
+	<img src="https://raw.githubusercontent.com/codeandcats/eggs-benny/master/images/logo-small.png">
 	<p align="center">
 		Downloads <a href="https://egghead.io">egghead.io</a> videos for delicious offline comsumption.
 	</p>
@@ -20,6 +16,7 @@ npm install eggs-benny -g
 ```
 
 ## Configure
+First enter your egghead.io credentials and download directory.
 ```
 eggs-benny config -e <email> -p <password> -d <download-path>
 ```
@@ -40,7 +37,7 @@ To download all courses in a technology group
 eggs-benny download -t "Vue.js"
 ```
 
-To download everything!
+To download everything! Warning, this will take a while.
 ```
 eggs-benny download
 ```
