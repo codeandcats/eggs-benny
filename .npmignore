@@ -40,7 +40,7 @@ jspm_packages
 .vscode/symbols.json
 
 # Generated
-dist
+dist/**/*.map
 
 # MacOS
 .DS_STORE
