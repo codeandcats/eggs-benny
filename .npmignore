@@ -36,12 +36,14 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-# MacOS
-.DS_STORE
-
 # VS Code
 .vscode/symbols.json
 
 # Generated
 dist
 
+# MacOS
+.DS_STORE
+
+# Images
+images
