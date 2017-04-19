@@ -7,8 +7,12 @@
 	</p>
 </p>
 
+## What is it?
+Eggs-benny allows you to download egghead.io videos by an entire course or technology group at a time!
+You can even choose to download their entire course library using a single command if you like.
+
 ### What's with the name?
-"Eggs Benny" is cafe/foodie-slang for [Eggs Benedict](https://www.google.com.au/search?q=eggs+benedict) which is the most delicious of all breakfasts (imho).
+"Eggs Benny" is cafe/foodie-slang for [Eggs Benedict](https://www.google.com.au/search?q=eggs+benedict) - the most delicious of all breakfasts (imho).
 
 ## Install
 ```

@@ -1,7 +1,7 @@
 {
   "name": "eggs-benny",
   "version": "1.0.5",
-  "description": "A CLI app for downloading tutorial videos from egghead.io",
+  "description": "Downloads egghead.io videos an entire course or technology at a time, for delicious offline comsumption.",
   "main": "index.js",
   "scripts": {
     "build": "tsc -p ./src",
