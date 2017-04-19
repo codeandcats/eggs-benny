@@ -1,6 +1,6 @@
 {
   "name": "eggs-benny",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Downloads egghead.io videos an entire course or technology at a time, for delicious offline comsumption.",
   "main": "index.js",
   "scripts": {
